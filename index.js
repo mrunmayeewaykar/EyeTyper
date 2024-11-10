@@ -1,26 +1,3 @@
-let recorder;
-let recordedAudio = [];
-
-async function setup() {
-    const stream = await navigator.mediaDevices.getUserMedia({
-        audio: true
-    })
-
-    recorder = new MediaRecorder(stream);
-
-    recorder.ondataavailable(ev => {
-        recordedAudio.push(ev.data);
-    })
-}
-
-async function startRecording() {
-    recorder.start();
-}
-
-async function stopRecording() {
-    recorder.stop();
-}
-
 function performSpeechRecognition() {
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
     recognition.lang = 'en-US';
