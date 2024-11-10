@@ -1,4 +1,8 @@
-function performSpeechRecognition() {
+let activeTab;
+
+chrome.action.onClicked.addListener(async (tab) => {
+    activeTab = tab;
+
     const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
     recognition.lang = 'en-US';
 
@@ -18,6 +22,4 @@ function performSpeechRecognition() {
     document.getElementById("recording-button").addEventListener('click', () => {
         recognition.start();
     });
-}
-
-performSpeechRecognition();
+});
