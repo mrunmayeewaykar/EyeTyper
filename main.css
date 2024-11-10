@@ -1,0 +1,25 @@
+.container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container p {
+    margin: 30px;
+    color: rgba(0,0,0,0.6);
+    font-family: sans-serif;
+}
+
+.mic-button{
+    background-color: red;
+    padding: 15px;
+    border-style: solid;
+    border-width: 0;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
